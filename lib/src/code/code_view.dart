@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
-import 'package:sample/src/code/entities/code.dart';
 import 'package:sample/src/code/mock_code_service.dart';
 import 'package:sample/src/code/widget/category_list.dart';
 import 'package:sample/src/code/widget/code_list.dart';
@@ -30,26 +30,18 @@ class CodeView extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 37),
-        CategoryList(
-          selectedItem: controller.selectedCategory,
-          categoryList: controller.categoryList,
-          onCategorySelected: controller.selectCategory,
-        ),
-        const SizedBox(height: 36),
-        Expanded(
-          child: FutureBuilder<List<Code>>(
-            future: controller.getCodes(),
-            builder: (context, snapshot) {
-              return snapshot.hasData
-                  ? CodeList(codeList: snapshot.data!)
-                  : const Center(child: CircularProgressIndicator());
-            },
-          ),
-        ),
-      ],
+    return ChangeNotifierProvider.value(
+      value: controller,
+      builder: (context, child) {
+        return Column(
+          children: const [
+            SizedBox(height: 37),
+            CategoryList(),
+            SizedBox(height: 36),
+            Expanded(child: CodeList()),
+          ],
+        );
+      },
     );
   }
 
