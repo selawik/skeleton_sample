@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
 import 'package:sample/src/code/entities/code.dart';
@@ -43,7 +44,9 @@ class CodeList extends StatelessWidget {
   }
 
   Widget _buildEmptyListPlaceholder(BuildContext context) {
-    return const Center(child: Text('Список кодов пуст'));
+    return Center(
+      child: Text(AppLocalizations.of(context)!.codesEmptyListPlaceholderText),
+    );
   }
 
   Widget _buildLoadingIndicator(BuildContext context) {

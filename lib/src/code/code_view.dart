@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
 import 'package:sample/src/code/mock_code_service.dart';
@@ -20,7 +21,7 @@ class CodeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        title: const Text('Мои коды'),
+        title: Text(AppLocalizations.of(context)!.codesViewTitle),
         actions: _buildActions(context),
       ),
       body: _buildBody(context),

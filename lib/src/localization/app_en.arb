@@ -1,5 +1,9 @@
 {
   "appTitle": "Title",
+  "profileViewTitle": "Profile",
+  "settingsViewTitle": "Settings",
+  "codesViewTitle": "My Codes",
+  "codesEmptyListPlaceholderText": "Codes list is empty",
   "@appTitle": {
     "description": "The title of the application"
   }

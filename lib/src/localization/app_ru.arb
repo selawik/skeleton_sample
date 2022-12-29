@@ -1,5 +1,9 @@
 {
   "appTitle": "Название",
+  "profileViewTitle": "Профиль",
+  "settingsViewTitle": "Настройки",
+  "codesViewTitle": "Мои коды",
+  "codesEmptyListPlaceholderText": "Список кодов пуст",
   "@appTitle": {
     "description": "Название приложения"
   }
