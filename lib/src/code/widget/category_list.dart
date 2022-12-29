@@ -1,21 +1,32 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:sample/src/code/entities/category.dart';
 import 'package:sample/src/core/app_colors.dart';
 
 class CategoryList extends StatelessWidget {
+  final Category selectedItem;
   final List<Category> categoryList;
+  final void Function(Category) onCategorySelected;
 
-  const CategoryList({Key? key, required this.categoryList}) : super(key: key);
+  const CategoryList({
+    Key? key,
+    required this.categoryList,
+    required this.selectedItem,
+    required this.onCategorySelected,
+  }) : super(key: key);
 
   Widget _buildListItem(BuildContext context, Category item) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-      decoration: BoxDecoration(
-        border: Border.all(width: 2, color: AppColors.gray),
-        borderRadius: BorderRadius.circular(41),
-      ),
-      child: Center(
-        child: Text(item.name),
+    return CupertinoButton(
+      onPressed: () => onCategorySelected(item),
+      padding: EdgeInsets.zero,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+        decoration: BoxDecoration(
+          border: Border.all(width: 2, color: AppColors.gray),
+          borderRadius: BorderRadius.circular(41),
+        ),
+        child: Center(
+          child: Text(item.name),
+        ),
       ),
     );
   }
