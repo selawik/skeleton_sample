@@ -1,11 +1,13 @@
+import 'package:sample/src/code/entities/category.dart';
+
 class Code {
   final int codeId;
-  final int categoryId;
+  final Category category;
   final String name;
 
   Code({
     required this.codeId,
-    required this.categoryId,
+    required this.category,
     required this.name,
   });
 }

@@ -17,10 +17,7 @@ class BottomNavBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-        color: isSelected ? AppColors.purple : null,
-      ),
+      decoration: itemDecoration,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
@@ -31,10 +28,20 @@ class BottomNavBarItem extends StatelessWidget {
           ),
           if (isSelected) ...[
             const SizedBox(width: 11),
-            Flexible(child: Text(title)),
+            Flexible(
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+            ),
           ]
         ],
       ),
     );
   }
+
+  BoxDecoration get itemDecoration => BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+        color: isSelected ? AppColors.purple : null,
+      );
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
-import 'package:sample/src/code/widget/category_list_item.dart';
+import 'package:sample/src/code/widget/category_list/category_list_item.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({

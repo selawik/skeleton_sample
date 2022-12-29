@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
 import 'package:sample/src/code/mock_code_service.dart';
-import 'package:sample/src/code/widget/category_list.dart';
-import 'package:sample/src/code/widget/code_list.dart';
+import 'package:sample/src/code/widget/category_list/category_list.dart';
+import 'package:sample/src/code/widget/code_list/code_list.dart';
 import 'package:sample/src/core/app_colors.dart';
 import 'package:sample/src/core/assets_catalog.dart';
 
@@ -37,7 +37,7 @@ class CodeView extends StatelessWidget {
           children: const [
             SizedBox(height: 37),
             CategoryList(),
-            SizedBox(height: 36),
+            SizedBox(height: 19),
             Expanded(child: CodeList()),
           ],
         );
@@ -59,9 +59,9 @@ class CodeView extends StatelessWidget {
   }
 
   Widget _buildTitle(BuildContext context) {
-    return const Text(
+    return Text(
       'Мои коды',
-      style: TextStyle(color: AppColors.black, fontSize: 24),
+      style: Theme.of(context).textTheme.headline1,
     );
   }
 }

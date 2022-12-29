@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample/src/code/code_view.dart';
+import 'package:sample/src/core/theme_builder.dart';
 import 'package:sample/src/home/home_controller.dart';
 import 'package:sample/src/home/widget/bottom_nav_bar.dart';
 import 'package:sample/src/profile/profile_view.dart';
@@ -32,9 +33,9 @@ class HomeView extends StatelessWidget {
         },
       ),
       bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(ThemeBuilder.defaultBorderRadius),
+          topRight: Radius.circular(ThemeBuilder.defaultBorderRadius),
         ),
         child: BottomNavBar(
           onSelectItem: controller.onSelectBottomItem,
