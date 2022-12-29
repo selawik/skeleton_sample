@@ -3,7 +3,8 @@ enum Category {
   favorite,
   car,
   home,
-  kids;
+  kids,
+  newCategory;
 
   bool get isAll => this == Category.all;
 
@@ -20,6 +21,8 @@ enum Category {
         return 'Дом';
       case Category.kids:
         return 'Дети';
+      case Category.newCategory:
+        return 'Новая';
     }
   }
 }
