@@ -49,13 +49,31 @@ class CodeView extends StatelessWidget {
     return [
       CupertinoButton(
         padding: EdgeInsets.zero,
-        child: Image.asset(AssetsCatalog.icNotifications),
+        child: _buildNotificationIcon(context),
         onPressed: () {},
       ),
-      const SizedBox(
-        width: 24,
-      ),
+      const SizedBox(width: 24),
     ];
+  }
+
+  Widget _buildNotificationIcon(BuildContext context) {
+    return Stack(
+      children: [
+        Image.asset(AssetsCatalog.icNotifications),
+        Positioned(
+          top: 3,
+          right: 4,
+          child: Container(
+            height: 8,
+            width: 8,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.red,
+            ),
+          ),
+        )
+      ],
+    );
   }
 
   Widget _buildTitle(BuildContext context) {
