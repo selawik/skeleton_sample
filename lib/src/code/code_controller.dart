@@ -10,7 +10,7 @@ class CodeController with ChangeNotifier {
 
   final CodeService _service;
 
-  final List<Category> categoryList = Category.values;
+  List<Category> get categoryList => Category.values;
 
   List<Code>? get codeList => _codeList;
 

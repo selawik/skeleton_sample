@@ -20,7 +20,7 @@ class CodeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        title: _buildTitle(context),
+        title: const Text('Мои коды'),
         actions: _buildActions(context),
       ),
       body: _buildBody(context),
@@ -61,20 +61,20 @@ class CodeView extends StatelessWidget {
         Positioned(
           top: 3,
           right: 4,
-          child: Container(
-            height: 8,
-            width: 8,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.red,
-            ),
-          ),
+          child: _buildNotificationIndicator(context),
         )
       ],
     );
   }
 
-  Widget _buildTitle(BuildContext context) {
-    return const Text('Мои коды');
+  Widget _buildNotificationIndicator(BuildContext context) {
+    return Container(
+      height: 8,
+      width: 8,
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: AppColors.red,
+      ),
+    );
   }
 }
