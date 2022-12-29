@@ -9,7 +9,9 @@ import 'package:sample/src/core/app_colors.dart';
 import 'package:sample/src/core/assets_catalog.dart';
 
 class CodeView extends StatelessWidget {
-  final CodeController controller = CodeController(service: MockCodeService());
+  final CodeController controller = CodeController(
+    codeService: MockCodeService(),
+  );
 
   CodeView({Key? key}) : super(key: key);
 

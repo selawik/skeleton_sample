@@ -4,20 +4,23 @@ import 'package:sample/src/code/entities/category.dart';
 import 'package:sample/src/code/entities/code.dart';
 
 class CodeController with ChangeNotifier {
-  final CodeService service;
-
-  final List<Category> categoryList = Category.values;
-
-  Category selectedCategory;
+  Category _selectedCategory;
 
   List<Code>? _codeList;
 
+  final CodeService _service;
+
+  final List<Category> categoryList = Category.values;
+
   List<Code>? get codeList => _codeList;
 
+  Category get selectedCategory => _selectedCategory;
+
   CodeController({
-    required this.service,
-    this.selectedCategory = Category.all,
-  }) {
+    required CodeService codeService,
+    Category category = Category.all,
+  })  : _service = codeService,
+        _selectedCategory = category {
     loadCodes();
   }
 
@@ -28,15 +31,15 @@ class CodeController with ChangeNotifier {
   }
 
   Future<List<Code>> getCodes() async {
-    return await service.getCodes(selectedCategory);
+    return await _service.getCodes(_selectedCategory);
   }
 
   void selectCategory(Category category) {
-    if (selectedCategory == category) {
+    if (_selectedCategory == category) {
       return;
     }
 
-    selectedCategory = category;
+    _selectedCategory = category;
     _codeList = null;
 
     notifyListeners();
