@@ -4,8 +4,6 @@ import 'package:sample/src/core/theme_builder.dart';
 import 'package:sample/src/home/home_controller.dart';
 import 'package:sample/src/home/widget/bottom_nav_bar.dart';
 import 'package:sample/src/profile/profile_view.dart';
-import 'package:sample/src/settings/settings_controller.dart';
-import 'package:sample/src/settings/settings_service.dart';
 import 'package:sample/src/settings/settings_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -21,8 +19,7 @@ class HomeView extends StatelessWidget {
         builder: (context, child) {
           switch (controller.itemIndex) {
             case 0:
-              return SettingsView(
-                  controller: SettingsController(SettingsService()));
+              return const SettingsView();
             case 1:
               return CodeView();
             case 2:

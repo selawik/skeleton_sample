@@ -21,7 +21,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: AppColors.black,
       type: BottomNavigationBarType.shifting,
       showUnselectedLabels: false,
       showSelectedLabels: false,
@@ -42,7 +41,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
             isSelected: _selectedIndex == 1,
           ),
           label: 'Мои коды',
-          backgroundColor: AppColors.black,
         ),
         BottomNavigationBarItem(
           icon: BottomNavBarItem(
@@ -51,7 +49,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
             isSelected: _selectedIndex == 2,
           ),
           label: 'Профиль',
-          backgroundColor: AppColors.black,
         )
       ],
       currentIndex: _selectedIndex, //New

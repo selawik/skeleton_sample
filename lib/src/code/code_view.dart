@@ -18,11 +18,7 @@ class CodeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        titleSpacing: 20,
         title: _buildTitle(context),
-        centerTitle: false,
-        backgroundColor: AppColors.white,
-        elevation: 0,
         actions: _buildActions(context),
       ),
       body: _buildBody(context),
@@ -77,9 +73,6 @@ class CodeView extends StatelessWidget {
   }
 
   Widget _buildTitle(BuildContext context) {
-    return Text(
-      'Мои коды',
-      style: Theme.of(context).textTheme.headline1,
-    );
+    return const Text('Мои коды');
   }
 }
