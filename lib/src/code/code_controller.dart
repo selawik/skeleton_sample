@@ -18,13 +18,13 @@ class CodeController with ChangeNotifier {
 
   CodeController({
     required CodeService codeService,
-    Category category = Category.all,
+    Category initialCategory = Category.all,
   })  : _service = codeService,
-        _selectedCategory = category {
-    loadCodes();
+        _selectedCategory = initialCategory {
+    _loadCodes();
   }
 
-  Future<void> loadCodes() async {
+  Future<void> _loadCodes() async {
     _codeList = await getCodes();
 
     notifyListeners();
@@ -44,6 +44,6 @@ class CodeController with ChangeNotifier {
 
     notifyListeners();
 
-    loadCodes();
+    _loadCodes();
   }
 }
