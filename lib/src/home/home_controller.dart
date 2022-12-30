@@ -1,13 +1,12 @@
 import 'package:flutter/foundation.dart';
-
-enum BottomNavItem { settings, code, profile }
+import 'package:sample/src/home/entities/bottom_navigation_item.dart';
 
 class HomeController with ChangeNotifier {
-  int itemIndex = 1;
+  BottomNavigationItem itemIndex = BottomNavigationItem.codes;
 
   HomeController();
 
-  void onSelectBottomItem(int index) {
+  void onSelectBottomItem(BottomNavigationItem index) {
     itemIndex = index;
 
     notifyListeners();

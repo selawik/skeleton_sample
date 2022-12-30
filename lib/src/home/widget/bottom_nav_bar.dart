@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:sample/src/core/app_colors.dart';
-import 'package:sample/src/core/assets_catalog.dart';
+import 'package:sample/src/core/theme/app_colors.dart';
+import 'package:sample/src/core/theme/assets_catalog.dart';
+import 'package:sample/src/home/entities/bottom_navigation_item.dart';
 import 'package:sample/src/home/widget/bottom_nav_bar_item.dart';
 
 class BottomNavBar extends StatefulWidget {
-  final void Function(int) onSelectItem;
+  final void Function(BottomNavigationItem) onSelectItem;
 
   const BottomNavBar({
     Key? key,
@@ -17,7 +18,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
+  BottomNavigationItem _selectedItem = BottomNavigationItem.codes;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: BottomNavBarItem(
             title: AppLocalizations.of(context)!.bottomBarSettingsTitle,
             asset: AssetsCatalog.icBottomBarSettings,
-            isSelected: _selectedIndex == 0,
+            isSelected: _selectedItem.isSettings,
           ),
           backgroundColor: AppColors.black,
           label: AppLocalizations.of(context)!.bottomBarSettingsTitle,
@@ -39,7 +40,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: BottomNavBarItem(
             title: AppLocalizations.of(context)!.bottomBarCodesTitle,
             asset: AssetsCatalog.icBottomBarCode,
-            isSelected: _selectedIndex == 1,
+            isSelected: _selectedItem.isCodes,
           ),
           backgroundColor: AppColors.black,
           label: AppLocalizations.of(context)!.bottomBarCodesTitle,
@@ -48,22 +49,22 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: BottomNavBarItem(
             title: AppLocalizations.of(context)!.bottomBarProfileTitle,
             asset: AssetsCatalog.icBottomBarProfile,
-            isSelected: _selectedIndex == 2,
+            isSelected: _selectedItem.isProfile,
           ),
           backgroundColor: AppColors.black,
           label: AppLocalizations.of(context)!.bottomBarProfileTitle,
         )
       ],
-      currentIndex: _selectedIndex, //New
+      currentIndex: _selectedItem.index, //New
       onTap: _onItemTapped, //New
     );
   }
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _selectedItem = BottomNavigationItem.values[index];
     });
 
-    widget.onSelectItem(_selectedIndex);
+    widget.onSelectItem(_selectedItem);
   }
 }
