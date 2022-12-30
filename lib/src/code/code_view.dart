@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
-import 'package:sample/src/code/mock_code_service.dart';
 import 'package:sample/src/code/widget/category_list/category_list.dart';
 import 'package:sample/src/code/widget/code_list/code_list.dart';
 import 'package:sample/src/core/app_colors.dart';
 import 'package:sample/src/core/assets_catalog.dart';
 
 class CodeView extends StatelessWidget {
-  final CodeController controller = CodeController(
-    codeService: MockCodeService(),
-  );
+  final CodeController controller;
 
-  CodeView({Key? key}) : super(key: key);
+  const CodeView({
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
