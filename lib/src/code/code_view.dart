@@ -48,8 +48,8 @@ class CodeView extends StatelessWidget {
     return [
       CupertinoButton(
         padding: EdgeInsets.zero,
+        onPressed: _onNotificationPressed,
         child: _buildNotificationIcon(context),
-        onPressed: () {},
       ),
       const SizedBox(width: 24),
     ];
@@ -77,5 +77,9 @@ class CodeView extends StatelessWidget {
         color: AppColors.red,
       ),
     );
+  }
+
+  void _onNotificationPressed() {
+    ///TODO implement
   }
 }
