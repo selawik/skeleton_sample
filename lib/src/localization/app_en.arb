@@ -4,6 +4,12 @@
   "settingsViewTitle": "Settings",
   "codesViewTitle": "My Codes",
   "codesEmptyListPlaceholderText": "Codes list is empty",
+  "categoryAll": "All",
+  "categoryFavorites": "Favorites",
+  "categoryCar": "Car",
+  "categoryHome": "Home",
+  "categoryKids": "Kids",
+  "categoryNew": "New",
   "@appTitle": {
     "description": "The title of the application"
   }

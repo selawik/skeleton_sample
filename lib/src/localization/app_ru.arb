@@ -4,6 +4,12 @@
   "settingsViewTitle": "Настройки",
   "codesViewTitle": "Мои коды",
   "codesEmptyListPlaceholderText": "Список кодов пуст",
+  "categoryAll": "Все",
+  "categoryFavorites": "Избранное",
+  "categoryCar": "Машина",
+  "categoryHome": "Дом",
+  "categoryKids": "Дети",
+  "categoryNew": "Новая",
   "@appTitle": {
     "description": "Название приложения"
   }

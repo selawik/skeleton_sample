@@ -1,23 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
 import 'package:sample/src/code/entities/category.dart';
 import 'package:sample/src/core/app_colors.dart';
 
 class CategoryListItem extends StatelessWidget {
-  final Category item;
+  final Category category;
 
   const CategoryListItem({
     Key? key,
-    required this.item,
+    required this.category,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var codeController = context.read<CodeController>();
 
-    var isItemSelected = item == codeController.selectedCategory;
+    var isItemSelected = category == codeController.selectedCategory;
 
     var textStyle = Theme.of(context).textTheme.subtitle1?.copyWith(
           color: isItemSelected ? AppColors.white : AppColors.black,
@@ -25,7 +26,7 @@ class CategoryListItem extends StatelessWidget {
         );
 
     return CupertinoButton(
-      onPressed: () => codeController.selectCategory(item),
+      onPressed: () => codeController.selectCategory(category),
       padding: EdgeInsets.zero,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
@@ -38,11 +39,28 @@ class CategoryListItem extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            item.toString(),
+            getCategoryName(context, category),
             style: textStyle,
           ),
         ),
       ),
     );
+  }
+
+  static String getCategoryName(BuildContext context, Category category) {
+    switch (category) {
+      case Category.all:
+        return AppLocalizations.of(context)!.categoryAll;
+      case Category.favorite:
+        return AppLocalizations.of(context)!.categoryFavorites;
+      case Category.car:
+        return AppLocalizations.of(context)!.categoryCar;
+      case Category.home:
+        return AppLocalizations.of(context)!.categoryHome;
+      case Category.kids:
+        return AppLocalizations.of(context)!.categoryKids;
+      case Category.newCategory:
+        return AppLocalizations.of(context)!.categoryNew;
+    }
   }
 }

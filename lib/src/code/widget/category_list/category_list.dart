@@ -17,7 +17,7 @@ class CategoryList extends StatelessWidget {
           child: ListView.separated(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             itemBuilder: (context, index) =>
-                CategoryListItem(item: controller.categoryList[index]),
+                CategoryListItem(category: controller.categoryList[index]),
             separatorBuilder: (context, index) => const SizedBox(width: 8),
             scrollDirection: Axis.horizontal,
             itemCount: controller.categoryList.length,
