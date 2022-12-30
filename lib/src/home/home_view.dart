@@ -21,6 +21,7 @@ class HomeView extends StatelessWidget {
       child: Consumer<HomeController>(
         builder: (context, controller, child) {
           return Scaffold(
+            extendBody: true,
             body: _buildBody(context),
             bottomNavigationBar: BottomNavBar(),
           );

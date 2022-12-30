@@ -36,12 +36,19 @@ class CodeList extends StatelessWidget {
         .map((code) => AppColors.codeListColors.getRandomElement())
         .toList();
 
+    var bottomListPadding = MediaQuery.of(context).padding.bottom + 19;
+
     return Scrollbar(
       thickness: 4,
       thumbVisibility: true,
       child: ListView.separated(
         shrinkWrap: true,
-        padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 19),
+        padding: EdgeInsets.only(
+          left: 21,
+          right: 21,
+          top: 19,
+          bottom: bottomListPadding,
+        ),
         itemBuilder: (context, index) => CodeListItem(
           item: list[index],
           colors: colorList[index],

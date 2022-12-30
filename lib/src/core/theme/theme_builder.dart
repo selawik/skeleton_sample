@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'app_colors.dart';
 
@@ -38,6 +39,9 @@ class ThemeBuilder {
         elevation: 0,
         centerTitle: false,
         titleSpacing: 20,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+        ),
         titleTextStyle: TextStyle(
           fontSize: 24,
           color: AppColors.black,
