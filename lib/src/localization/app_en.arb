@@ -10,6 +10,9 @@
   "categoryHome": "Home",
   "categoryKids": "Kids",
   "categoryNew": "New",
+  "bottomBarProfileTitle": "Profile",
+  "bottomBarSettingsTitle": "My codes",
+  "bottomBarCodesTitle": "Settings",
   "@appTitle": {
     "description": "The title of the application"
   }

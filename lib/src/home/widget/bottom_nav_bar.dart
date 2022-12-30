@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:sample/src/core/app_colors.dart';
 import 'package:sample/src/core/assets_catalog.dart';
 import 'package:sample/src/home/widget/bottom_nav_bar_item.dart';
@@ -27,28 +28,30 @@ class _BottomNavBarState extends State<BottomNavBar> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: BottomNavBarItem(
-            title: 'Настройки',
+            title: AppLocalizations.of(context)!.bottomBarSettingsTitle,
             asset: AssetsCatalog.icBottomBarSettings,
             isSelected: _selectedIndex == 0,
           ),
           backgroundColor: AppColors.black,
-          label: 'Настройки',
+          label: AppLocalizations.of(context)!.bottomBarSettingsTitle,
         ),
         BottomNavigationBarItem(
           icon: BottomNavBarItem(
-            title: 'Мои коды',
+            title: AppLocalizations.of(context)!.bottomBarCodesTitle,
             asset: AssetsCatalog.icBottomBarCode,
             isSelected: _selectedIndex == 1,
           ),
-          label: 'Мои коды',
+          backgroundColor: AppColors.black,
+          label: AppLocalizations.of(context)!.bottomBarCodesTitle,
         ),
         BottomNavigationBarItem(
           icon: BottomNavBarItem(
-            title: 'Профиль',
+            title: AppLocalizations.of(context)!.bottomBarProfileTitle,
             asset: AssetsCatalog.icBottomBarProfile,
             isSelected: _selectedIndex == 2,
           ),
-          label: 'Профиль',
+          backgroundColor: AppColors.black,
+          label: AppLocalizations.of(context)!.bottomBarProfileTitle,
         )
       ],
       currentIndex: _selectedIndex, //New

@@ -10,6 +10,9 @@
   "categoryHome": "Дом",
   "categoryKids": "Дети",
   "categoryNew": "Новая",
+  "bottomBarProfileTitle": "Профиль",
+  "bottomBarSettingsTitle": "Мои коды",
+  "bottomBarCodesTitle": "Настройки",
   "@appTitle": {
     "description": "Название приложения"
   }
