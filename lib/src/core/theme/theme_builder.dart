@@ -13,6 +13,8 @@ class ThemeBuilder {
 
   static double get defaultBorderRadius => 20;
 
+  static double get smallBorderRadius => 10;
+
   static TextTheme get textTheme => const TextTheme(
         headline1: TextStyle(
           fontSize: 24,
@@ -50,6 +52,6 @@ class ThemeBuilder {
 
   static ProgressIndicatorThemeData get progressIndicatorTheme =>
       const ProgressIndicatorThemeData(
-        color: AppColors.purple,
+        color: AppColors.darkPurple,
       );
 }

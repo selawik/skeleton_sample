@@ -42,6 +42,6 @@ class BottomNavBarItem extends StatelessWidget {
 
   BoxDecoration get itemDecoration => BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: isSelected ? AppColors.purple : null,
+        color: isSelected ? AppColors.darkPurple : null,
       );
 }
