@@ -3,7 +3,7 @@ import 'package:sample/src/code/entities/category.dart';
 import 'package:sample/src/code/entities/code.dart';
 
 class MockCodeService implements CodeService {
-  List<Code> mockCodes = [
+  final List<Code> mockCodes = [
     Code(codeId: 1, category: Category.kids, name: 'Мой ребенок'),
     Code(codeId: 2, category: Category.home, name: 'Мой кошелек'),
     Code(codeId: 3, category: Category.favorite, name: 'Мой автомобиль 1'),

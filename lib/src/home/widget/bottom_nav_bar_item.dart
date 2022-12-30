@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:sample/src/core/theme/app_colors.dart';
 
 class BottomNavBarItem extends StatelessWidget {
+  final String title;
+  final String asset;
+  final bool isSelected;
+
   const BottomNavBarItem({
     Key? key,
     required this.title,
     required this.asset,
     required this.isSelected,
   }) : super(key: key);
-
-  final String title;
-  final String asset;
-  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {

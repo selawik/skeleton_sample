@@ -2,9 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:sample/src/home/entities/bottom_navigation_item.dart';
 
 class HomeController with ChangeNotifier {
-  BottomNavigationItem selectedItem = BottomNavigationItem.codes;
+  BottomNavigationItem selectedItem;
 
-  HomeController();
+  HomeController({required this.selectedItem});
 
   void onSelectBottomItem(BottomNavigationItem index) {
     selectedItem = index;
