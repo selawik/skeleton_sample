@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:sample/src/core/injection.dart' as di;
-import 'package:sample/src/core/theme_builder.dart';
+import 'package:sample/src/core/di/injection.dart' as di;
+import 'package:sample/src/core/theme/theme_builder.dart';
 import 'package:sample/src/home/home_controller.dart';
 
 import 'home/home_view.dart';

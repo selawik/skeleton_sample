@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
 import 'package:sample/src/code/widget/category_list/category_list.dart';
 import 'package:sample/src/code/widget/code_list/code_list.dart';
-import 'package:sample/src/core/app_colors.dart';
-import 'package:sample/src/core/assets_catalog.dart';
+import 'package:sample/src/core/theme/app_colors.dart';
+import 'package:sample/src/core/theme/assets_catalog.dart';
 
 class CodeView extends StatelessWidget {
   final CodeController controller;

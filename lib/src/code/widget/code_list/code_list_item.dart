@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sample/src/code/entities/code.dart';
-import 'package:sample/src/core/app_colors.dart';
-import 'package:sample/src/core/assets_catalog.dart';
-import 'package:sample/src/core/theme_builder.dart';
+import 'package:sample/src/core/theme/app_colors.dart';
+import 'package:sample/src/core/theme/assets_catalog.dart';
+import 'package:sample/src/core/theme/theme_builder.dart';
 
 class CodeListItem extends StatelessWidget {
   final Code item;

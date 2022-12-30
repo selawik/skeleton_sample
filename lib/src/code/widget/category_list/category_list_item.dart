@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:sample/src/code/code_controller.dart';
 import 'package:sample/src/code/entities/category.dart';
-import 'package:sample/src/core/app_colors.dart';
+import 'package:sample/src/core/theme/app_colors.dart';
 
 class CategoryListItem extends StatelessWidget {
   final Category category;
