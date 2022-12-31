@@ -8,15 +8,22 @@ import 'package:sample/src/home/home_controller.dart';
 var locator = GetIt.instance;
 
 void init() {
+  _registerServices();
+  _registerControllers();
+
+  /// Bottom nav initial value
+  locator.registerSingleton(BottomNavigationItem.codes);
+}
+
+void _registerServices() {
+  /// Register code service
+  locator.registerFactory<CodeService>(() => MockCodeService());
+}
+
+void _registerControllers() {
   /// Register code controller
   locator.registerFactory(() => CodeController(codeService: locator()));
 
   /// Home page controller
   locator.registerFactory(() => HomeController(selectedItem: locator()));
-
-  /// Bottom nav initial value
-  locator.registerSingleton(BottomNavigationItem.codes);
-
-  /// Register code service
-  locator.registerFactory<CodeService>(() => MockCodeService());
 }
